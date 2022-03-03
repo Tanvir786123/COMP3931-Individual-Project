@@ -1,182 +1,182 @@
-primary key,high level class
-0,530-539:Diseases Of Esophagus, Stomach, And Duodenum:None
-1,410-414:Ischemic Heart Disease:None
-2,401-405:Hypertensive Disease:None
-3,580-589:Nephritis, Nephrotic Syndrome, And Nephrosis:None
-4,030-041:Other Bacterial Diseases:None
-5,270-279:Other Metabolic Disorders And Immunity Disorders:None
-6,490-496:Chronic Obstructive Pulmonary Disease And Allied Conditions:None
-7,420-429:Other Forms Of Heart Disease:None
-8,V40-V49:Persons With A Condition Influencing Their Health Status:None
-9,001-009:Intestinal Infectious Diseases:None
-10,570-579:Other Diseases Of Digestive System:None
-11,590-599:Other Diseases Of Urinary System:None
-12,780-789:Symptoms:None
-13,440-449:Diseases Of Arteries, Arterioles, And Capillaries:None
-14,510-519:Other Diseases Of Respiratory System:None
-15,996-999:Complications Of Surgical And Medical Care, Not Elsewhere Classified:None
-16,V10-V19:Persons With Potential Health Hazards Related To Personal And Family History:None
-17,285:Other and unspecified anemias:None
-18,V30-V39:Liveborn Infants According To Type Of Birth:None
-19,764-779:Other Conditions Originating In The Perinatal Period:None
-20,V01-V09:Persons With Potential Health Hazards Related To Communicable Diseases:None
-21,560-569:Other Diseases Of Intestines And Peritoneum:None
-22,790-796:Nonspecific Abnormal Findings:None
-23,E930-E949:Drugs, Medicinal And Biological Substances Causing Adverse Effects In Therapeutic Use:None
-24,V50-V59:Persons Encountering Health Services For Specific Procedures And Aftercare:None
-25,200-209:Malignant Neoplasm Of Lymphatic And Hematopoietic Tissue:None
-26,288:Diseases of white blood cells:None
-27,070-079:Other Diseases Due To Viruses And Chlamydiae:None
-28,451-459:Diseases Of Veins And Lymphatics, And Other Diseases Of Circulatory System:None
-29,E846-E849:Vehicle Accidents, Not Elsewhere Classifiable:None
-30,555-558:Noninfective Enteritis And Colitis:None
-31,990-995:Other And Unspecified Effects Of External Causes:None
-32,550-553:Hernia Of Abdominal Cavity:None
-33,E878-E879:Surgical And Medical Procedures As The Cause Of Abnormal Reaction Of Patient Or Later Complication, Without Mention Of Misadventure At The Time Of Procedure:None
-34,430-438:Cerebrovascular Disease:None
-35,340-349:Other Disorders Of The Central Nervous System:None
-36,480-488:Pneumonia And Influenza:None
-37,240-246:Disorders Of Thyroid Gland:None
-38,330-337:Hereditary And Degenerative Diseases Of The Central Nervous System:None
-39,290-294:Organic Psychotic Conditions:None
-40,295-299:Other Psychoses:None
-41,320-327:Inflammatory Diseases Of The Central Nervous System:None
-42,600-608:Diseases Of Male Genital Organs:None
-43,V20-V29:Persons Encountering Health Services In Circumstances Related To Reproduction And Development:None
-44,V70-V82:Persons Without Reported Diagnosis Encountered During Examination And Investigation Of Individuals And Populations:None
-45,757:Congenital anomalies of the integument:None
-46,690-698:Other Inflammatory Conditions Of Skin And Subcutaneous Tissue:None
-47,280:Iron deficiency anemias:None
-48,300-316:Neurotic Disorders, Personality Disorders, And Other Nonpsychotic Mental Disorders:None
-49,235-238:Neoplasms Of Uncertain Behavior:None
-50,249-259:Diseases Of Other Endocrine Glands:None
-51,710-719:Arthropathies And Related Disorders:None
-52,700-709:Other Diseases Of Skin And Subcutaneous Tissue:None
-53,393-398:Chronic Rheumatic Heart Disease:None
-54,360-379:Disorders Of The Eye And Adnexa:None
-55,150-159:Malignant Neoplasm Of Digestive Organs And Peritoneum:None
-56,190-199:Malignant Neoplasm Of Other And Unspecified Sites:None
-57,680-686:Infections Of Skin And Subcutaneous Tissue:None
-58,500-508:Pneumoconioses And Other Lung Diseases Due To External Agents:None
-59,260-269:Nutritional Deficiencies:None
-60,670-677:Complications Of The Puerperium:None
-61,860-869:Internal Injury Of Chest, Abdomen, And Pelvis:None
-62,730-739:Osteopathies, Chondropathies, And Acquired Musculoskeletal Deformities:None
-63,850-854:Intracranial Injury, Excluding Those With Skull Fracture:None
-64,E880-E888:Accidental Falls:None
-65,805-809:Fracture Of Spine And Trunk:None
-66,870-879:Open Wound Of Head, Neck, And Trunk:None
-67,797-799:Ill-Defined And Unknown Causes Of Morbidity And Mortality:None
-68,160-165:Malignant Neoplasm Of Respiratory And Intrathoracic Organs:None
-69,338-338:Pain:None
-70,V60-V69:Persons Encountering Health Services In Other Circumstances:None
-71,725-729:Rheumatism, Excluding The Back:None
-72,350-359:Disorders Of The Peripheral Nervous System:None
-73,820-829:Fracture Of Lower Limb:None
-74,E820-E825:Motor Vehicle Nontraffic Accidents:None
-75,E810-E819:Motor Vehicle Traffic Accidents:None
-76,287:Purpura and other hemorrhagic conditions:None
-77,958-959:Certain Traumatic Complications And Unspecified Injuries:None
-78,110-118:Mycoses:None
-79,751:Other congenital anomalies of digestive system:None
-80,753:Congenital anomalies of urinary system:None
-81,284:Aplastic anemia and other bone marrow failure syndromes:None
-82,210-229:Benign Neoplasms:None
-83,810-819:Fracture Of Upper Limb:None
-84,E916-E928:Other Accidents:None
-85,800-804:Fracture Of Skull:None
-86,756:Other congenital musculoskeletal anomalies:None
-87,E870-E876:Misadventures To Patients During Surgical And Medical Care:None
-88,286:Coagulation defects:None
-89,617-629:Other Disorders Of Female Genital Tract:None
-90,050-059:Viral Diseases Accompanied By Exanthem:None
-91,E970-E979:Legal Intervention:None
-92,905-909:Late Effects Of Injuries, Poisonings, Toxic Effects, And Other External Causes:None
-93,E929-E929:Late Effects Of Accidental Injury:None
-94,720-724:Dorsopathies:None
-95,E960-E969:Homicide And Injury Purposely Inflicted By Other Persons:None
-96,745:Bulbus cordis anomalies and anomalies of cardiac septal closure:None
-97,415-417:Diseases Of Pulmonary Circulation:None
-98,930-939:Effects Of Foreign Body Entering Through Orifice:None
-99,E910-E915:Accidents Caused By Submersion, Suffocation, And Foreign Bodies:None
-100,880-887:Open Wound Of Upper Limb:None
-101,179-189:Malignant Neoplasm Of Genitourinary Organs:None
-102,614-616:Inflammatory Disease Of Female Pelvic Organs:None
-103,747:Other congenital anomalies of circulatory system:None
-104,137-139:Late Effects Of Infectious And Parasitic Diseases:None
-105,317-319:Intellectual Disabilities:None
-106,470-478:Other Diseases Of Upper Respiratory Tract:None
-107,960-979:Poisoning By Drugs, Medicinals And Biological Substances:None
-108,E850-E858:Accidental Poisoning By Drugs, Medicinal Substances, And Biologicals:None
-109,289:Other diseases of blood and blood-forming organs:None
-110,V85-V85:Body Mass Index:None
-111,746:Other congenital anomalies of heart:None
-112,520-529:Diseases Of Oral Cavity, Salivary Glands, And Jaws:None
-113,460-466:Acute Respiratory Infections:None
-114,755:Other congenital anomalies of limbs:None
-115,760-763:Maternal Causes Of Perinatal Morbidity And Mortality:None
-116,920-924:Contusion With Intact Skin Surface:None
-117,741:Spina bifida:None
-118,042-042:Human Immunodeficiency Virus:None
-119,239-239:Neoplasms Of Unspecified Nature:None
-120,E000-E000:External Cause Status:None
-121,281:Other deficiency anemias:None
-122,610-612:Disorders Of Breast:None
-123,130-136:Other Infectious And Parasitic Diseases:None
-124,V87-V87:Other Specified Personal Exposures And History Presenting Hazards To Health:None
-125,748:Congenital anomalies of respiratory system:None
-126,754:Certain congenital musculoskeletal deformities:None
-127,759:Other and unspecified congenital anomalies:None
-128,V88-V88:Acquired Absence Of Other Organs And Tissue:None
-129,283:Acquired hemolytic anemias:None
-130,170-176:Malignant Neoplasm Of Bone, Connective Tissue, Skin, And Breast:None
-131,E950-E959:Suicide And Self-Inflicted Injury:None
-132,940-949:Burns:None
-133,752:Congenital anomalies of genital organs:None
-134,910-919:Superficial Injury:None
-135,380-389:Diseases Of The Ear And Mastoid Process:None
-136,925-929:Crushing Injury:None
-137,660-669:Complications Occurring Mainly In The Course Of Labor And Delivery:None
-138,650-659:Normal Delivery, And Other Indications For Care In Pregnancy, Labor, And Delivery:None
-139,640-649:Complications Mainly Related To Pregnancy:None
-140,140-149:Malignant Neoplasm Of Lip, Oral Cavity, And Pharynx:None
-141,230-234:Carcinoma In Situ:None
-142,045-049:Poliomyelitis And Other Non-Arthropod-Borne Viral Diseases Of Central Nervous System:None
-143,339-339:Other Headache Syndromes:None
-144,282:Hereditary hemolytic anemias:None
-145,840-848:Sprains And Strains Of Joints And Adjacent Muscles:None
-146,830-839:Dislocation:None
-147,950-957:Injury To Nerves And Spinal Cord:None
-148,742:Other congenital anomalies of nervous system:None
-149,630-639:Ectopic And Molar Pregnancy And Other Pregnancy With Abortive Outcome:None
-150,750:Other congenital anomalies of upper alimentary tract:None
-151,900-904:Injury To Blood Vessels:None
-152,758:Chromosomal anomalies:None
-153,749:Cleft palate and cleft lip:None
-154,060-066:Arthropod-Borne Viral Diseases:None
-155,010-018:Tuberculosis:None
-156,390-392:Acute Rheumatic Fever:None
-157,540-543:Appendicitis:None
-158,E826-E829:Other Road Vehicle Accidents:None
-159,890-897:Open Wound Of Lower Limb:None
-160,080-088:Rickettsioses And Other Arthropod-Borne Diseases:None
-161,120-129:Helminthiases:None
-162,V83-V84:Genetics:None
-163,744:Congenital anomalies of ear face and neck:None
-164,980-989:Toxic Effects Of Substances Chiefly Nonmedicinal As To Source:None
-165,E900-E909:Accidents Due To Natural And Environmental Factors:None
-166,743:Congenital anomalies of eye:None
-167,E980-E989:Injury Undetermined Whether Accidentally Or Purposely Inflicted:None
-168,E800-E807:Railway Accidents:None
-169,E001-E030:Activity:None
-170,V86-V86:Estrogen Receptor Status:None
-171,E890-E899:Accidents Caused By Fire And Flames:None
-172,E860-E869:Accidental Poisoning By Other Solid And Liquid Substances, Gases, And Vapors:None
-173,090-099:Syphilis And Other Venereal Diseases:None
-174,020-027:Zoonotic Bacterial Diseases:None
-175,740:Anencephalus and similar anomalies:None
-176,E990-E999:Injury Resulting From Operations Of War:None
-177,V90-V90:Retained Foreign Body:None
-178,E830-E838:Water Transport Accidents:None
-179,E840-E845:Air And Space Transport Accidents:None
-180,V91-V91:Multiple Gestation Placenta Status:None
+primary_key,second_level_class,fk_first_level_class
+0,530-539:Diseases Of Esophagus, Stomach, And Duodenum:None,0
+1,410-414:Ischemic Heart Disease:None,1
+2,401-405:Hypertensive Disease:None,1
+3,580-589:Nephritis, Nephrotic Syndrome, And Nephrosis:None,2
+4,030-041:Other Bacterial Diseases:None,3
+5,270-279:Other Metabolic Disorders And Immunity Disorders:None,4
+6,490-496:Chronic Obstructive Pulmonary Disease And Allied Conditions:None,5
+7,420-429:Other Forms Of Heart Disease:None,1
+8,V40-V49:Persons With A Condition Influencing Their Health Status:None,6
+9,001-009:Intestinal Infectious Diseases:None,3
+10,570-579:Other Diseases Of Digestive System:None,0
+11,590-599:Other Diseases Of Urinary System:None,2
+12,780-789:Symptoms:None,7
+13,440-449:Diseases Of Arteries, Arterioles, And Capillaries:None,1
+14,510-519:Other Diseases Of Respiratory System:None,5
+15,996-999:Complications Of Surgical And Medical Care, Not Elsewhere Classified:None,8
+16,V10-V19:Persons With Potential Health Hazards Related To Personal And Family History:None,6
+17,285:Other and unspecified anemias:None,9
+18,V30-V39:Liveborn Infants According To Type Of Birth:None,6
+19,764-779:Other Conditions Originating In The Perinatal Period:None,10
+20,V01-V09:Persons With Potential Health Hazards Related To Communicable Diseases:None,6
+21,560-569:Other Diseases Of Intestines And Peritoneum:None,0
+22,790-796:Nonspecific Abnormal Findings:None,7
+23,E930-E949:Drugs, Medicinal And Biological Substances Causing Adverse Effects In Therapeutic Use:None,11
+24,V50-V59:Persons Encountering Health Services For Specific Procedures And Aftercare:None,6
+25,200-209:Malignant Neoplasm Of Lymphatic And Hematopoietic Tissue:None,12
+26,288:Diseases of white blood cells:None,9
+27,070-079:Other Diseases Due To Viruses And Chlamydiae:None,3
+28,451-459:Diseases Of Veins And Lymphatics, And Other Diseases Of Circulatory System:None,1
+29,E846-E849:Vehicle Accidents, Not Elsewhere Classifiable:None,11
+30,555-558:Noninfective Enteritis And Colitis:None,0
+31,990-995:Other And Unspecified Effects Of External Causes:None,8
+32,550-553:Hernia Of Abdominal Cavity:None,0
+33,E878-E879:Surgical And Medical Procedures As The Cause Of Abnormal Reaction Of Patient Or Later Complication, Without Mention Of Misadventure At The Time Of Procedure:None,11
+34,430-438:Cerebrovascular Disease:None,1
+35,340-349:Other Disorders Of The Central Nervous System:None,13
+36,480-488:Pneumonia And Influenza:None,5
+37,240-246:Disorders Of Thyroid Gland:None,4
+38,330-337:Hereditary And Degenerative Diseases Of The Central Nervous System:None,13
+39,290-294:Organic Psychotic Conditions:None,14
+40,295-299:Other Psychoses:None,14
+41,320-327:Inflammatory Diseases Of The Central Nervous System:None,13
+42,600-608:Diseases Of Male Genital Organs:None,2
+43,V20-V29:Persons Encountering Health Services In Circumstances Related To Reproduction And Development:None,6
+44,V70-V82:Persons Without Reported Diagnosis Encountered During Examination And Investigation Of Individuals And Populations:None,6
+45,757:Congenital anomalies of the integument:None,15
+46,690-698:Other Inflammatory Conditions Of Skin And Subcutaneous Tissue:None,16
+47,280:Iron deficiency anemias:None,9
+48,300-316:Neurotic Disorders, Personality Disorders, And Other Nonpsychotic Mental Disorders:None,14
+49,235-238:Neoplasms Of Uncertain Behavior:None,12
+50,249-259:Diseases Of Other Endocrine Glands:None,4
+51,710-719:Arthropathies And Related Disorders:None,17
+52,700-709:Other Diseases Of Skin And Subcutaneous Tissue:None,16
+53,393-398:Chronic Rheumatic Heart Disease:None,1
+54,360-379:Disorders Of The Eye And Adnexa:None,13
+55,150-159:Malignant Neoplasm Of Digestive Organs And Peritoneum:None,12
+56,190-199:Malignant Neoplasm Of Other And Unspecified Sites:None,12
+57,680-686:Infections Of Skin And Subcutaneous Tissue:None,16
+58,500-508:Pneumoconioses And Other Lung Diseases Due To External Agents:None,5
+59,260-269:Nutritional Deficiencies:None,4
+60,670-677:Complications Of The Puerperium:None,18
+61,860-869:Internal Injury Of Chest, Abdomen, And Pelvis:None,8
+62,730-739:Osteopathies, Chondropathies, And Acquired Musculoskeletal Deformities:None,17
+63,850-854:Intracranial Injury, Excluding Those With Skull Fracture:None,8
+64,E880-E888:Accidental Falls:None,11
+65,805-809:Fracture Of Spine And Trunk:None,8
+66,870-879:Open Wound Of Head, Neck, And Trunk:None,8
+67,797-799:Ill-Defined And Unknown Causes Of Morbidity And Mortality:None,7
+68,160-165:Malignant Neoplasm Of Respiratory And Intrathoracic Organs:None,12
+69,338-338:Pain:None,13
+70,V60-V69:Persons Encountering Health Services In Other Circumstances:None,6
+71,725-729:Rheumatism, Excluding The Back:None,17
+72,350-359:Disorders Of The Peripheral Nervous System:None,13
+73,820-829:Fracture Of Lower Limb:None,8
+74,E820-E825:Motor Vehicle Nontraffic Accidents:None,11
+75,E810-E819:Motor Vehicle Traffic Accidents:None,11
+76,287:Purpura and other hemorrhagic conditions:None,9
+77,958-959:Certain Traumatic Complications And Unspecified Injuries:None,8
+78,110-118:Mycoses:None,3
+79,751:Other congenital anomalies of digestive system:None,15
+80,753:Congenital anomalies of urinary system:None,15
+81,284:Aplastic anemia and other bone marrow failure syndromes:None,9
+82,210-229:Benign Neoplasms:None,12
+83,810-819:Fracture Of Upper Limb:None,8
+84,E916-E928:Other Accidents:None,11
+85,800-804:Fracture Of Skull:None,8
+86,756:Other congenital musculoskeletal anomalies:None,15
+87,E870-E876:Misadventures To Patients During Surgical And Medical Care:None,11
+88,286:Coagulation defects:None,9
+89,617-629:Other Disorders Of Female Genital Tract:None,2
+90,050-059:Viral Diseases Accompanied By Exanthem:None,3
+91,E970-E979:Legal Intervention:None,11
+92,905-909:Late Effects Of Injuries, Poisonings, Toxic Effects, And Other External Causes:None,8
+93,E929-E929:Late Effects Of Accidental Injury:None,11
+94,720-724:Dorsopathies:None,17
+95,E960-E969:Homicide And Injury Purposely Inflicted By Other Persons:None,11
+96,745:Bulbus cordis anomalies and anomalies of cardiac septal closure:None,15
+97,415-417:Diseases Of Pulmonary Circulation:None,1
+98,930-939:Effects Of Foreign Body Entering Through Orifice:None,8
+99,E910-E915:Accidents Caused By Submersion, Suffocation, And Foreign Bodies:None,11
+100,880-887:Open Wound Of Upper Limb:None,8
+101,179-189:Malignant Neoplasm Of Genitourinary Organs:None,12
+102,614-616:Inflammatory Disease Of Female Pelvic Organs:None,2
+103,747:Other congenital anomalies of circulatory system:None,15
+104,137-139:Late Effects Of Infectious And Parasitic Diseases:None,3
+105,317-319:Intellectual Disabilities:None,14
+106,470-478:Other Diseases Of Upper Respiratory Tract:None,5
+107,960-979:Poisoning By Drugs, Medicinals And Biological Substances:None,8
+108,E850-E858:Accidental Poisoning By Drugs, Medicinal Substances, And Biologicals:None,11
+109,289:Other diseases of blood and blood-forming organs:None,9
+110,V85-V85:Body Mass Index:None,6
+111,746:Other congenital anomalies of heart:None,15
+112,520-529:Diseases Of Oral Cavity, Salivary Glands, And Jaws:None,0
+113,460-466:Acute Respiratory Infections:None,5
+114,755:Other congenital anomalies of limbs:None,15
+115,760-763:Maternal Causes Of Perinatal Morbidity And Mortality:None,10
+116,920-924:Contusion With Intact Skin Surface:None,8
+117,741:Spina bifida:None,15
+118,042-042:Human Immunodeficiency Virus:None,3
+119,239-239:Neoplasms Of Unspecified Nature:None,12
+120,E000-E000:External Cause Status:None,11
+121,281:Other deficiency anemias:None,9
+122,610-612:Disorders Of Breast:None,2
+123,130-136:Other Infectious And Parasitic Diseases:None,3
+124,V87-V87:Other Specified Personal Exposures And History Presenting Hazards To Health:None,6
+125,748:Congenital anomalies of respiratory system:None,15
+126,754:Certain congenital musculoskeletal deformities:None,15
+127,759:Other and unspecified congenital anomalies:None,15
+128,V88-V88:Acquired Absence Of Other Organs And Tissue:None,6
+129,283:Acquired hemolytic anemias:None,9
+130,170-176:Malignant Neoplasm Of Bone, Connective Tissue, Skin, And Breast:None,12
+131,E950-E959:Suicide And Self-Inflicted Injury:None,11
+132,940-949:Burns:None,8
+133,752:Congenital anomalies of genital organs:None,15
+134,910-919:Superficial Injury:None,8
+135,380-389:Diseases Of The Ear And Mastoid Process:None,13
+136,925-929:Crushing Injury:None,8
+137,660-669:Complications Occurring Mainly In The Course Of Labor And Delivery:None,18
+138,650-659:Normal Delivery, And Other Indications For Care In Pregnancy, Labor, And Delivery:None,18
+139,640-649:Complications Mainly Related To Pregnancy:None,18
+140,140-149:Malignant Neoplasm Of Lip, Oral Cavity, And Pharynx:None,12
+141,230-234:Carcinoma In Situ:None,12
+142,045-049:Poliomyelitis And Other Non-Arthropod-Borne Viral Diseases Of Central Nervous System:None,3
+143,339-339:Other Headache Syndromes:None,13
+144,282:Hereditary hemolytic anemias:None,9
+145,840-848:Sprains And Strains Of Joints And Adjacent Muscles:None,8
+146,830-839:Dislocation:None,8
+147,950-957:Injury To Nerves And Spinal Cord:None,8
+148,742:Other congenital anomalies of nervous system:None,15
+149,630-639:Ectopic And Molar Pregnancy And Other Pregnancy With Abortive Outcome:None,18
+150,750:Other congenital anomalies of upper alimentary tract:None,15
+151,900-904:Injury To Blood Vessels:None,8
+152,758:Chromosomal anomalies:None,15
+153,749:Cleft palate and cleft lip:None,15
+154,060-066:Arthropod-Borne Viral Diseases:None,3
+155,010-018:Tuberculosis:None,3
+156,390-392:Acute Rheumatic Fever:None,1
+157,540-543:Appendicitis:None,0
+158,E826-E829:Other Road Vehicle Accidents:None,11
+159,890-897:Open Wound Of Lower Limb:None,8
+160,080-088:Rickettsioses And Other Arthropod-Borne Diseases:None,3
+161,120-129:Helminthiases:None,3
+162,V83-V84:Genetics:None,6
+163,744:Congenital anomalies of ear face and neck:None,15
+164,980-989:Toxic Effects Of Substances Chiefly Nonmedicinal As To Source:None,8
+165,E900-E909:Accidents Due To Natural And Environmental Factors:None,11
+166,743:Congenital anomalies of eye:None,15
+167,E980-E989:Injury Undetermined Whether Accidentally Or Purposely Inflicted:None,11
+168,E800-E807:Railway Accidents:None,11
+169,E001-E030:Activity:None,11
+170,V86-V86:Estrogen Receptor Status:None,6
+171,E890-E899:Accidents Caused By Fire And Flames:None,11
+172,E860-E869:Accidental Poisoning By Other Solid And Liquid Substances, Gases, And Vapors:None,11
+173,090-099:Syphilis And Other Venereal Diseases:None,3
+174,020-027:Zoonotic Bacterial Diseases:None,3
+175,740:Anencephalus and similar anomalies:None,15
+176,E990-E999:Injury Resulting From Operations Of War:None,11
+177,V90-V90:Retained Foreign Body:None,6
+178,E830-E838:Water Transport Accidents:None,11
+179,E840-E845:Air And Space Transport Accidents:None,11
+180,V91-V91:Multiple Gestation Placenta Status:None,6

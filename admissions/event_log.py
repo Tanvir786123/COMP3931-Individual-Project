@@ -60,14 +60,14 @@ class CSVReader(object):
                     first_lvl_sentence = stack.pop()
                     second_lvl_sentence = stack.pop()
                     if second_lvl_sentence not in second_lvl_codes:
-                        second_lvl_codes[second_lvl_sentence] = counter
+                        second_lvl_codes[second_lvl_sentence] = [counter, row[ICD9_CODE]]
                         counter += 1
                     stack.clear()
         self.__file.seek(0)
         return second_lvl_codes
 
-    def generate_diagnosis_icd(self, first_level_codes, second_lvl_codes):
-        HEADERS = ['subject_id', 'hadm_id', 'seq_num', 'icd9_code', 'first_level_code', 'second_level_code']
+    def generate_diagnosis_icd(self, second_lvl_codes):
+        HEADERS = ['subject_id', 'hadm_id', 'seq_num', 'icd9_code', 'second_level_code']
         ICD9_CODE = 3
         list = [HEADERS]
         next(self.__reader)
@@ -77,13 +77,25 @@ class CSVReader(object):
                 stack = self.generate_classifications(search(row[ICD9_CODE]), stack)
                 first_lvl_sentence = stack.pop()
                 second_lvl_sentence = stack.pop()
-                first_lvl_code = first_level_codes[first_lvl_sentence]
-                second_lvl_code = second_lvl_codes[second_lvl_sentence]
+                second_lvl_code = second_lvl_codes[second_lvl_sentence][0]
                 list.append(
-                    [row[0], row[1], row[2], row[3], first_lvl_code, second_lvl_code]
+                    [row[0], row[1], row[2], row[3], second_lvl_code]
                 )
                 stack.clear()
         return list
+
+    def connect_second_lvl_to_first(self, first_lvl_codes, second_lvl_codes):
+        stack = deque()
+        for k, v in second_lvl_codes.items():
+            second_lvl_pk = v[0]
+            icd9_code = v[1]
+            stack = self.generate_classifications(search(icd9_code), stack)
+            first_lvl_sentence = stack.pop()
+            if first_lvl_sentence not in first_lvl_codes:
+                print('fuck')
+            else:
+                first_lvl_pk = first_lvl_codes[first_lvl_sentence]
+                second_lvl_codes[k] = [second_lvl_pk, first_lvl_pk]
 
     def save_to_path(self, path, list):
         file = open(path, 'w')
@@ -109,7 +121,10 @@ class CSVReader(object):
                 file.write(str(header) + ',')
             count += 1
         for k, v in dict.items():
-            file.write(str(v) + ',' + str(k) + '\n')
+            if type(v) == list:
+                file.write(str(v[0]) + ',' + str(k) + ',' + str(v[1]) + '\n')
+            else:
+                file.write(str(v) + ',' + str(k) + '\n')
         file.close()
 
 if __name__ == '__main__':
@@ -117,9 +132,10 @@ if __name__ == '__main__':
 
     second_level_class = csv_obj.create_second_level_classifier()
     first_level_class = csv_obj.create_first_level_classifier()
+    csv_obj.connect_second_lvl_to_first(first_level_class, second_level_class)
 
-    diagnosis_icd = csv_obj.generate_diagnosis_icd(first_level_class, second_level_class)
+    diagnosis_icd = csv_obj.generate_diagnosis_icd(second_level_class)
     csv_obj.save_to_path('celonis/diagnosis_icd.csv', diagnosis_icd)
 
-    csv_obj.save_dict_to_file('celonis/first_level_icd9_codes.csv', first_level_class, ['primary key', 'high level class'])
-    csv_obj.save_dict_to_file('celonis/second_level_icd9_codes.csv', second_level_class, ['primary key', 'high level class'])
+    csv_obj.save_dict_to_file('celonis/first_level_icd9_codes.csv', first_level_class, ['primary_key', 'first_level_class'])
+    csv_obj.save_dict_to_file('celonis/second_level_icd9_codes.csv', second_level_class, ['primary_key', 'second_level_class', 'fk_first_level_class'])
