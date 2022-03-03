@@ -1,8 +1,8 @@
 primary_key,second_level_class,fk_first_level_class
-0,530-539:Diseases Of Esophagus, Stomach, And Duodenum:None,0
+0,530-539:Diseases Of Esophagus- Stomach- And Duodenum:None,0
 1,410-414:Ischemic Heart Disease:None,1
 2,401-405:Hypertensive Disease:None,1
-3,580-589:Nephritis, Nephrotic Syndrome, And Nephrosis:None,2
+3,580-589:Nephritis- Nephrotic Syndrome- And Nephrosis:None,2
 4,030-041:Other Bacterial Diseases:None,3
 5,270-279:Other Metabolic Disorders And Immunity Disorders:None,4
 6,490-496:Chronic Obstructive Pulmonary Disease And Allied Conditions:None,5
@@ -12,9 +12,9 @@ primary_key,second_level_class,fk_first_level_class
 10,570-579:Other Diseases Of Digestive System:None,0
 11,590-599:Other Diseases Of Urinary System:None,2
 12,780-789:Symptoms:None,7
-13,440-449:Diseases Of Arteries, Arterioles, And Capillaries:None,1
+13,440-449:Diseases Of Arteries- Arterioles- And Capillaries:None,1
 14,510-519:Other Diseases Of Respiratory System:None,5
-15,996-999:Complications Of Surgical And Medical Care, Not Elsewhere Classified:None,8
+15,996-999:Complications Of Surgical And Medical Care- Not Elsewhere Classified:None,8
 16,V10-V19:Persons With Potential Health Hazards Related To Personal And Family History:None,6
 17,285:Other and unspecified anemias:None,9
 18,V30-V39:Liveborn Infants According To Type Of Birth:None,6
@@ -22,17 +22,17 @@ primary_key,second_level_class,fk_first_level_class
 20,V01-V09:Persons With Potential Health Hazards Related To Communicable Diseases:None,6
 21,560-569:Other Diseases Of Intestines And Peritoneum:None,0
 22,790-796:Nonspecific Abnormal Findings:None,7
-23,E930-E949:Drugs, Medicinal And Biological Substances Causing Adverse Effects In Therapeutic Use:None,11
+23,E930-E949:Drugs- Medicinal And Biological Substances Causing Adverse Effects In Therapeutic Use:None,11
 24,V50-V59:Persons Encountering Health Services For Specific Procedures And Aftercare:None,6
 25,200-209:Malignant Neoplasm Of Lymphatic And Hematopoietic Tissue:None,12
 26,288:Diseases of white blood cells:None,9
 27,070-079:Other Diseases Due To Viruses And Chlamydiae:None,3
-28,451-459:Diseases Of Veins And Lymphatics, And Other Diseases Of Circulatory System:None,1
-29,E846-E849:Vehicle Accidents, Not Elsewhere Classifiable:None,11
+28,451-459:Diseases Of Veins And Lymphatics- And Other Diseases Of Circulatory System:None,1
+29,E846-E849:Vehicle Accidents- Not Elsewhere Classifiable:None,11
 30,555-558:Noninfective Enteritis And Colitis:None,0
 31,990-995:Other And Unspecified Effects Of External Causes:None,8
 32,550-553:Hernia Of Abdominal Cavity:None,0
-33,E878-E879:Surgical And Medical Procedures As The Cause Of Abnormal Reaction Of Patient Or Later Complication, Without Mention Of Misadventure At The Time Of Procedure:None,11
+33,E878-E879:Surgical And Medical Procedures As The Cause Of Abnormal Reaction Of Patient Or Later Complication- Without Mention Of Misadventure At The Time Of Procedure:None,11
 34,430-438:Cerebrovascular Disease:None,1
 35,340-349:Other Disorders Of The Central Nervous System:None,13
 36,480-488:Pneumonia And Influenza:None,5
@@ -47,7 +47,7 @@ primary_key,second_level_class,fk_first_level_class
 45,757:Congenital anomalies of the integument:None,15
 46,690-698:Other Inflammatory Conditions Of Skin And Subcutaneous Tissue:None,16
 47,280:Iron deficiency anemias:None,9
-48,300-316:Neurotic Disorders, Personality Disorders, And Other Nonpsychotic Mental Disorders:None,14
+48,300-316:Neurotic Disorders- Personality Disorders- And Other Nonpsychotic Mental Disorders:None,14
 49,235-238:Neoplasms Of Uncertain Behavior:None,12
 50,249-259:Diseases Of Other Endocrine Glands:None,4
 51,710-719:Arthropathies And Related Disorders:None,17
@@ -60,17 +60,17 @@ primary_key,second_level_class,fk_first_level_class
 58,500-508:Pneumoconioses And Other Lung Diseases Due To External Agents:None,5
 59,260-269:Nutritional Deficiencies:None,4
 60,670-677:Complications Of The Puerperium:None,18
-61,860-869:Internal Injury Of Chest, Abdomen, And Pelvis:None,8
-62,730-739:Osteopathies, Chondropathies, And Acquired Musculoskeletal Deformities:None,17
-63,850-854:Intracranial Injury, Excluding Those With Skull Fracture:None,8
+61,860-869:Internal Injury Of Chest- Abdomen- And Pelvis:None,8
+62,730-739:Osteopathies- Chondropathies- And Acquired Musculoskeletal Deformities:None,17
+63,850-854:Intracranial Injury- Excluding Those With Skull Fracture:None,8
 64,E880-E888:Accidental Falls:None,11
 65,805-809:Fracture Of Spine And Trunk:None,8
-66,870-879:Open Wound Of Head, Neck, And Trunk:None,8
+66,870-879:Open Wound Of Head- Neck- And Trunk:None,8
 67,797-799:Ill-Defined And Unknown Causes Of Morbidity And Mortality:None,7
 68,160-165:Malignant Neoplasm Of Respiratory And Intrathoracic Organs:None,12
 69,338-338:Pain:None,13
 70,V60-V69:Persons Encountering Health Services In Other Circumstances:None,6
-71,725-729:Rheumatism, Excluding The Back:None,17
+71,725-729:Rheumatism- Excluding The Back:None,17
 72,350-359:Disorders Of The Peripheral Nervous System:None,13
 73,820-829:Fracture Of Lower Limb:None,8
 74,E820-E825:Motor Vehicle Nontraffic Accidents:None,11
@@ -91,14 +91,14 @@ primary_key,second_level_class,fk_first_level_class
 89,617-629:Other Disorders Of Female Genital Tract:None,2
 90,050-059:Viral Diseases Accompanied By Exanthem:None,3
 91,E970-E979:Legal Intervention:None,11
-92,905-909:Late Effects Of Injuries, Poisonings, Toxic Effects, And Other External Causes:None,8
+92,905-909:Late Effects Of Injuries- Poisonings- Toxic Effects- And Other External Causes:None,8
 93,E929-E929:Late Effects Of Accidental Injury:None,11
 94,720-724:Dorsopathies:None,17
 95,E960-E969:Homicide And Injury Purposely Inflicted By Other Persons:None,11
 96,745:Bulbus cordis anomalies and anomalies of cardiac septal closure:None,15
 97,415-417:Diseases Of Pulmonary Circulation:None,1
 98,930-939:Effects Of Foreign Body Entering Through Orifice:None,8
-99,E910-E915:Accidents Caused By Submersion, Suffocation, And Foreign Bodies:None,11
+99,E910-E915:Accidents Caused By Submersion- Suffocation- And Foreign Bodies:None,11
 100,880-887:Open Wound Of Upper Limb:None,8
 101,179-189:Malignant Neoplasm Of Genitourinary Organs:None,12
 102,614-616:Inflammatory Disease Of Female Pelvic Organs:None,2
@@ -106,12 +106,12 @@ primary_key,second_level_class,fk_first_level_class
 104,137-139:Late Effects Of Infectious And Parasitic Diseases:None,3
 105,317-319:Intellectual Disabilities:None,14
 106,470-478:Other Diseases Of Upper Respiratory Tract:None,5
-107,960-979:Poisoning By Drugs, Medicinals And Biological Substances:None,8
-108,E850-E858:Accidental Poisoning By Drugs, Medicinal Substances, And Biologicals:None,11
+107,960-979:Poisoning By Drugs- Medicinals And Biological Substances:None,8
+108,E850-E858:Accidental Poisoning By Drugs- Medicinal Substances- And Biologicals:None,11
 109,289:Other diseases of blood and blood-forming organs:None,9
 110,V85-V85:Body Mass Index:None,6
 111,746:Other congenital anomalies of heart:None,15
-112,520-529:Diseases Of Oral Cavity, Salivary Glands, And Jaws:None,0
+112,520-529:Diseases Of Oral Cavity- Salivary Glands- And Jaws:None,0
 113,460-466:Acute Respiratory Infections:None,5
 114,755:Other congenital anomalies of limbs:None,15
 115,760-763:Maternal Causes Of Perinatal Morbidity And Mortality:None,10
@@ -129,7 +129,7 @@ primary_key,second_level_class,fk_first_level_class
 127,759:Other and unspecified congenital anomalies:None,15
 128,V88-V88:Acquired Absence Of Other Organs And Tissue:None,6
 129,283:Acquired hemolytic anemias:None,9
-130,170-176:Malignant Neoplasm Of Bone, Connective Tissue, Skin, And Breast:None,12
+130,170-176:Malignant Neoplasm Of Bone- Connective Tissue- Skin- And Breast:None,12
 131,E950-E959:Suicide And Self-Inflicted Injury:None,11
 132,940-949:Burns:None,8
 133,752:Congenital anomalies of genital organs:None,15
@@ -137,9 +137,9 @@ primary_key,second_level_class,fk_first_level_class
 135,380-389:Diseases Of The Ear And Mastoid Process:None,13
 136,925-929:Crushing Injury:None,8
 137,660-669:Complications Occurring Mainly In The Course Of Labor And Delivery:None,18
-138,650-659:Normal Delivery, And Other Indications For Care In Pregnancy, Labor, And Delivery:None,18
+138,650-659:Normal Delivery- And Other Indications For Care In Pregnancy- Labor- And Delivery:None,18
 139,640-649:Complications Mainly Related To Pregnancy:None,18
-140,140-149:Malignant Neoplasm Of Lip, Oral Cavity, And Pharynx:None,12
+140,140-149:Malignant Neoplasm Of Lip- Oral Cavity- And Pharynx:None,12
 141,230-234:Carcinoma In Situ:None,12
 142,045-049:Poliomyelitis And Other Non-Arthropod-Borne Viral Diseases Of Central Nervous System:None,3
 143,339-339:Other Headache Syndromes:None,13
@@ -171,7 +171,7 @@ primary_key,second_level_class,fk_first_level_class
 169,E001-E030:Activity:None,11
 170,V86-V86:Estrogen Receptor Status:None,6
 171,E890-E899:Accidents Caused By Fire And Flames:None,11
-172,E860-E869:Accidental Poisoning By Other Solid And Liquid Substances, Gases, And Vapors:None,11
+172,E860-E869:Accidental Poisoning By Other Solid And Liquid Substances- Gases- And Vapors:None,11
 173,090-099:Syphilis And Other Venereal Diseases:None,3
 174,020-027:Zoonotic Bacterial Diseases:None,3
 175,740:Anencephalus and similar anomalies:None,15
