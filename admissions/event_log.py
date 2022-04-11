@@ -27,7 +27,7 @@ class CSVReader(object):
         ICD9_CODE = 3
         next(self.__reader)
         first_lvl_seen_codes = {}
-        second_lvl_codes = {}
+        first_lvl_codes = {}
         code_stack = deque()
         counter = 0
         for row in self.__reader:
@@ -37,13 +37,13 @@ class CSVReader(object):
                     # only fails for code 719.70
                     first_lvl_sentence = code_stack.pop()
                     second_lvl_sentence = code_stack.pop()
-                    if first_lvl_sentence not in second_lvl_codes:
-                        second_lvl_codes[first_lvl_sentence] = counter
+                    if first_lvl_sentence not in first_lvl_codes:
+                        first_lvl_codes[first_lvl_sentence] = counter
                         counter += 1
                     code_stack.clear()
                     first_lvl_seen_codes[row[ICD9_CODE]] = 'seen'
         self.__file.seek(0)
-        return second_lvl_codes
+        return first_lvl_codes
 
     def create_second_level_classifier(self):
         ICD9_CODE = 3
