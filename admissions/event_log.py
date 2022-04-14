@@ -1,6 +1,5 @@
 import csv
 from collections import deque
-from re import S
 from icd9cms.icd9 import search
 
 
@@ -16,7 +15,7 @@ class CSVReader(object):
         self.__file.close()
 
     def generate_classifications(self, object, stack):
-        if object.parent == None:
+        if object.parent is None:
             stack.append(object)
             return
         stack.append(object)
@@ -28,19 +27,22 @@ class CSVReader(object):
         next(self.__reader)
         first_lvl_seen_codes = {}
         first_lvl_codes = {}
-        code_stack = deque()
+        stack = deque()
         counter = 0
         for row in self.__reader:
             if row[ICD9_CODE]:
-                if row[ICD9_CODE] not in first_lvl_seen_codes and row[ICD9_CODE] != '71970':
-                    code_stack = self.generate_classifications(search(row[ICD9_CODE]), code_stack)
+                if row[ICD9_CODE] not in first_lvl_seen_codes\
+                        and row[ICD9_CODE] != '71970':
+                    stack = self.generate_classifications(
+                        search(row[ICD9_CODE]), stack
+                    )
                     # only fails for code 719.70
-                    first_lvl_sentence = code_stack.pop()
-                    second_lvl_sentence = code_stack.pop()
+                    first_lvl_sentence = stack.pop()
+                    stack.pop()
                     if first_lvl_sentence not in first_lvl_codes:
                         first_lvl_codes[first_lvl_sentence] = counter
                         counter += 1
-                    code_stack.clear()
+                    stack.clear()
                     first_lvl_seen_codes[row[ICD9_CODE]] = 'seen'
         self.__file.seek(0)
         return first_lvl_codes
@@ -54,13 +56,18 @@ class CSVReader(object):
         second_lvl_codes = {}
         for row in self.__reader:
             if row[ICD9_CODE]:
-                if row[ICD9_CODE] not in second_lvl_seen_codes and row[ICD9_CODE] != '71970':
+                if row[ICD9_CODE] not in second_lvl_seen_codes\
+                        and row[ICD9_CODE] != '71970':
                     second_lvl_seen_codes[row[ICD9_CODE]] = 'seen'
-                    stack = self.generate_classifications(search(row[ICD9_CODE]), stack)
-                    first_lvl_sentence = stack.pop()
+                    stack = self.generate_classifications(
+                        search(row[ICD9_CODE]), stack
+                    )
+                    stack.pop()
                     second_lvl_sentence = stack.pop()
                     if second_lvl_sentence not in second_lvl_codes:
-                        second_lvl_codes[second_lvl_sentence] = [counter, row[ICD9_CODE]]
+                        second_lvl_codes[second_lvl_sentence] = [counter,
+                                                                 row[ICD9_CODE]
+                                                                 ]
                         counter += 1
                     stack.clear()
         self.__file.seek(0)
@@ -75,30 +82,37 @@ class CSVReader(object):
         third_lvl_codes = {}
         for row in self.__reader:
             if row[ICD9_CODE]:
-                if row[ICD9_CODE] not in third_lvl_seen_codes and row[ICD9_CODE] != '71970':
+                if row[ICD9_CODE] not in third_lvl_seen_codes\
+                        and row[ICD9_CODE] != '71970':
                     third_lvl_seen_codes[row[ICD9_CODE]] = 'seen'
-                    stack = self.generate_classifications(search(row[ICD9_CODE]), stack)
-                    first_lvl_sentence = stack.pop()
-                    second_lvl_sentence = stack.pop()
+                    stack = self.generate_classifications(
+                        search(row[ICD9_CODE]), stack
+                    )
+                    stack.pop()
+                    stack.pop()
                     third_lvl_sentence = stack.pop()
                     if third_lvl_sentence not in third_lvl_codes:
-                        third_lvl_codes[third_lvl_sentence] = [counter, row[ICD9_CODE]]
+                        third_lvl_codes[third_lvl_sentence] = [counter,
+                                                               row[ICD9_CODE]]
                         counter += 1
                     stack.clear()
         self.__file.seek(0)
         return third_lvl_codes
 
     def generate_diagnosis_icd(self, third_lvl_codes):
-        HEADERS = ['subject_id', 'hadm_id', 'seq_num', 'icd9_code', 'third_level_code']
+        HEADERS = ['subject_id', 'hadm_id', 'seq_num', 'icd9_code',
+                   'third_level_code']
         ICD9_CODE = 3
         list = [HEADERS]
         next(self.__reader)
         stack = deque()
         for row in self.__reader:
             if row[ICD9_CODE] and row[ICD9_CODE] != '71970':
-                stack = self.generate_classifications(search(row[ICD9_CODE]), stack)
-                first_lvl_sentence = stack.pop()
-                second_lvl_sentence = stack.pop()
+                stack = self.generate_classifications(
+                    search(row[ICD9_CODE]), stack
+                )
+                stack.pop()
+                stack.pop()
                 third_lvl_sentence = stack.pop()
                 third_lvl_code = third_lvl_codes[third_lvl_sentence][0]
                 list.append(
@@ -113,7 +127,7 @@ class CSVReader(object):
             third_lvl_pk = v[0]
             icd9_code = v[1]
             stack = self.generate_classifications(search(icd9_code), stack)
-            first_lvl_sentence = stack.pop()
+            stack.pop()
             second_lvl_sentence = stack.pop()
             if second_lvl_sentence not in second_lvl_codes:
                 print('fuck')
@@ -168,6 +182,7 @@ class CSVReader(object):
                 file.write(str(v) + ',' + str(k) + '\n')
         file.close()
 
+
 if __name__ == '__main__':
     csv_obj = CSVReader('data/diagnosis_icd.csv')
 
@@ -180,6 +195,14 @@ if __name__ == '__main__':
     diagnosis_icd = csv_obj.generate_diagnosis_icd(third_level_class)
     csv_obj.save_to_path('celonis/diagnosis_icd.csv', diagnosis_icd)
 
-    csv_obj.save_dict_to_file('celonis/first_level_icd9_codes.csv', first_level_class, ['primary_key', 'first_level_class'])
-    csv_obj.save_dict_to_file('celonis/second_level_icd9_codes.csv', second_level_class, ['primary_key', 'second_level_class', 'fk_first_level_class'])
-    csv_obj.save_dict_to_file('celonis/third_level_icd9_codes.csv', third_level_class, ['primary_key', 'third_level_class', 'fk_second_level_class'])
+    csv_obj.save_dict_to_file('celonis/first_level_icd9_codes.csv',
+                              first_level_class,
+                              ['primary_key', 'first_level_class'])
+    csv_obj.save_dict_to_file('celonis/second_level_icd9_codes.csv',
+                              second_level_class,
+                              ['primary_key',
+                               'second_level_class', 'fk_first_level_class'])
+    csv_obj.save_dict_to_file('celonis/third_level_icd9_codes.csv',
+                              third_level_class,
+                              ['primary_key', 'third_level_class',
+                               'fk_second_level_class'])
