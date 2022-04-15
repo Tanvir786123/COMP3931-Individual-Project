@@ -222,17 +222,6 @@ class CSVReader(object):
             index += 1
         return vector
 
-    def welch_t(self, a, b, equal_var=False, describe=True):
-        # Perform Welch's t-test
-        test, p_val = ttest_ind(a, b, equal_var=equal_var)
-        if describe:
-            # Print decision.
-            if p_val < 0.05:
-                print('Decision: Reject the null hypothesis')
-            else:
-                print('Decision: Fail to reject the null hypothesis')
-        return test, p_val
-
     def levine(self, a, b, describe=True):
         test, p_val = levene(a, b)
         if describe:
@@ -261,6 +250,17 @@ class CSVReader(object):
         else:
             print('Effect Size: Large')
         return d
+
+    def welch_t(self, a, b, equal_var=False, describe=True):
+        # Perform Welch's t-test
+        test, p_val = ttest_ind(a, b, equal_var=equal_var)
+        if describe:
+            # Print decision.
+            if p_val < 0.05:
+                print('Decision: Reject the null hypothesis')
+            else:
+                print('Decision: Fail to reject the null hypothesis')
+        return test, p_val
 
 
 if __name__ == '__main__':
