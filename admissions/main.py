@@ -232,6 +232,17 @@ class CSVReader(object):
                 print('Decision: Fail to reject the null hypothesis')
         return test, p_val
 
+    def welch_t(self, a, b, equal_var=False, describe=True):
+        # Perform Welch's t-test
+        test, p_val = ttest_ind(a, b, equal_var=equal_var)
+        if describe:
+            # Print decision.
+            if p_val < 0.05:
+                print('Decision: Reject the null hypothesis')
+            else:
+                print('Decision: Fail to reject the null hypothesis')
+        return test, p_val
+
     def cohen_d(self, a, b, describe=True):
         a_n, b_n = len(a), len(b)
         # Calculate pooled standard deviation.
@@ -250,17 +261,6 @@ class CSVReader(object):
         else:
             print('Effect Size: Large')
         return d
-
-    def welch_t(self, a, b, equal_var=False, describe=True):
-        # Perform Welch's t-test
-        test, p_val = ttest_ind(a, b, equal_var=equal_var)
-        if describe:
-            # Print decision.
-            if p_val < 0.05:
-                print('Decision: Reject the null hypothesis')
-            else:
-                print('Decision: Fail to reject the null hypothesis')
-        return test, p_val
 
 
 if __name__ == '__main__':
