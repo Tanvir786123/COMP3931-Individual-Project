@@ -251,7 +251,7 @@ class CSVReader(object):
         pooled_sd = np.sqrt(pv_num/pv_den)
         d = (a.mean()-b.mean())/pooled_sd
         if describe:
-            print("Cohens'd: ", d)
+            print("Cohens'd:", d)
         if d < 0.20:
             print('Effect Size: Very Small')
         elif d < 0.50:
