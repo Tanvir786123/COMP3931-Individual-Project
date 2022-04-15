@@ -2,7 +2,7 @@ import csv
 from collections import deque
 from icd9cms.icd9 import search
 import numpy as np
-from scipy.stats import ttest_ind
+from scipy.stats import ttest_ind, levene
 
 
 class CSVReader(object):
@@ -196,9 +196,6 @@ class CSVReader(object):
             vector.append(float(row[index]))
         return np.asarray(vector)
 
-    def perform_t_test(self, a, b, equal_var=True):
-        return ttest_ind(a, b, equal_var=equal_var)
-
     def combine(self, a, b, headers):
         a = a.tolist()
         b = b.tolist()
@@ -226,21 +223,44 @@ class CSVReader(object):
         return vector
 
     def welch_t(self, a, b, equal_var=False, describe=True):
-        # Calculate degrees of freedom
-        dof_num = (a.var()/a.size + b.var()/b.size)**2
-        dof_den = (a.var()/a.size)**2 / (a.size-1)\
-            + (b.var()/b.size)**2 / (b.size-1)
-        dof = dof_num/dof_den
         # Perform Welch's t-test
         test, p_val = ttest_ind(a, b, equal_var=equal_var)
         if describe:
-            print(f"Welch's t-test = {test}\np-value: {p_val}\nDoF: {dof}")
             # Print decision.
             if p_val < 0.05:
                 print('Decision: Reject the null hypothesis')
             else:
                 print('Decision: Fail to reject the null hypothesis')
-        return ttest_ind(a, b, equal_var=equal_var)
+        return test, p_val
+
+    def levine(self, a, b, describe=True):
+        test, p_val = levene(a, b)
+        if describe:
+            # Print decision.
+            if p_val < 0.05:
+                print('Decision: Reject the null hypothesis')
+            else:
+                print('Decision: Fail to reject the null hypothesis')
+        return test, p_val
+
+    def cohen_d(self, a, b, describe=True):
+        a_n, b_n = len(a), len(b)
+        # Calculate pooled standard deviation.
+        pv_num = ((a_n-1)*a.var())+((b_n-1)*b.var())
+        pv_den = a_n+b_n
+        pooled_sd = np.sqrt(pv_num/pv_den)
+        d = (a.mean()-b.mean())/pooled_sd
+        if describe:
+            print("Cohens'd: ", d)
+        if d < 0.20:
+            print('Effect Size: Very Small')
+        elif d < 0.50:
+            print('Effect Size: Small')
+        elif d < 0.80:
+            print('Effect Size: Medium')
+        else:
+            print('Effect Size: Large')
+        return d
 
 
 if __name__ == '__main__':
@@ -256,14 +276,21 @@ if __name__ == '__main__':
         medicare_patients, 3
     )
 
-    t_stat, p_val = csv_obj.perform_t_test(
-        private_patients_avg_wait_time, medicare_patients_avg_wait_time, False
+    t_stat, p_val = csv_obj.levine(
+        private_patients_avg_wait_time, medicare_patients_avg_wait_time
     )
     print(t_stat, p_val)
+    print()
     t_stat, p_val = csv_obj.welch_t(
         private_patients_avg_wait_time, medicare_patients_avg_wait_time
     )
     print(t_stat, p_val)
+    print()
+    cohen_d = csv_obj.cohen_d(
+        private_patients_avg_wait_time, medicare_patients_avg_wait_time
+    )
+    print()
+    print(cohen_d)
 
     '''
     first_level_class = csv_obj.create_first_level_classifier()
