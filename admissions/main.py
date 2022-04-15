@@ -1,11 +1,11 @@
 import csv
 from collections import deque
 from icd9cms.icd9 import search
+import numpy as np
+from scipy.stats import ttest_ind
 
 
 class CSVReader(object):
-    __file = None
-    __reader = None
 
     def __init__(self, path) -> None:
         self.__file = open(path)
@@ -182,10 +182,43 @@ class CSVReader(object):
                 file.write(str(v) + ',' + str(k) + '\n')
         file.close()
 
+    def grab_rows_via_attribute(self, attribute):
+        vector = list()
+        for row in self.__reader:
+            if attribute in row:
+                vector.append(row)
+        self.__file.seek(0)
+        return np.asarray(vector)
+
+    def get_array_slice(self, a, index):
+        vector = list()
+        for row in a:
+            vector.append(float(row[index]))
+        return np.asarray(vector)
+
+    def perform_t_test(self, a, b, equal_var=True):
+        return ttest_ind(a, b, equal_var=equal_var)
+
 
 if __name__ == '__main__':
-    csv_obj = CSVReader('data/diagnosis_icd.csv')
+    csv_obj = CSVReader('data/admit_to_discharge_avg.csv')
 
+    private_patients = csv_obj.grab_rows_via_attribute('Private')
+    medicare_patients = csv_obj.grab_rows_via_attribute('Medicare')
+
+    private_patients_avg_wait_time = csv_obj.get_array_slice(
+        private_patients, 3
+    )
+    medicare_patients_avg_wait_time = csv_obj.get_array_slice(
+        medicare_patients, 3
+    )
+
+    t_stat, p_val = csv_obj.perform_t_test(
+        private_patients_avg_wait_time, medicare_patients_avg_wait_time, False
+    )
+    print(t_stat, p_val)
+
+    '''
     first_level_class = csv_obj.create_first_level_classifier()
     second_level_class = csv_obj.create_second_level_classifier()
     third_level_class = csv_obj.create_third_level_classifier()
@@ -206,3 +239,4 @@ if __name__ == '__main__':
                               third_level_class,
                               ['primary_key', 'third_level_class',
                                'fk_second_level_class'])
+    '''
