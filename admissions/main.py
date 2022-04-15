@@ -199,6 +199,49 @@ class CSVReader(object):
     def perform_t_test(self, a, b, equal_var=True):
         return ttest_ind(a, b, equal_var=equal_var)
 
+    def combine(self, a, b, headers):
+        a = a.tolist()
+        b = b.tolist()
+        vector = list(headers)
+        size = max(len(a), len(b))
+        index = 0
+        item_a = None
+        item_b = None
+        while (len(vector) < size):
+            try:
+                item_a = str(a[index])
+                item_b = str(b[index])
+                vector.append([item_a, item_b])
+            except Exception:
+                try:
+                    item_a = str(a[index])
+                    vector.append([item_a])
+                except Exception:
+                    try:
+                        item_b = str(b[index])
+                        vector.append([item_b])
+                    except Exception:
+                        pass
+            index += 1
+        return vector
+
+    def welch_t(self, a, b, equal_var=False, describe=True):
+        # Calculate degrees of freedom
+        dof_num = (a.var()/a.size + b.var()/b.size)**2
+        dof_den = (a.var()/a.size)**2 / (a.size-1)\
+            + (b.var()/b.size)**2 / (b.size-1)
+        dof = dof_num/dof_den
+        # Perform Welch's t-test
+        test, p_val = ttest_ind(a, b, equal_var=equal_var)
+        if describe:
+            print(f"Welch's t-test = {test}\np-value: {p_val}\nDoF: {dof}")
+            # Print decision.
+            if p_val < 0.05:
+                print('Decision: Reject the null hypothesis')
+            else:
+                print('Decision: Fail to reject the null hypothesis')
+        return ttest_ind(a, b, equal_var=equal_var)
+
 
 if __name__ == '__main__':
     csv_obj = CSVReader('data/admit_to_discharge_avg.csv')
@@ -215,6 +258,10 @@ if __name__ == '__main__':
 
     t_stat, p_val = csv_obj.perform_t_test(
         private_patients_avg_wait_time, medicare_patients_avg_wait_time, False
+    )
+    print(t_stat, p_val)
+    t_stat, p_val = csv_obj.welch_t(
+        private_patients_avg_wait_time, medicare_patients_avg_wait_time
     )
     print(t_stat, p_val)
 
