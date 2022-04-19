@@ -193,7 +193,10 @@ class CSVReader(object):
     def get_array_slice(self, a, index):
         vector = list()
         for row in a:
-            vector.append(float(row[index]))
+            try:
+                vector.append(float(row[index]))
+            except Exception:
+                pass
         return np.asarray(vector)
 
     def combine(self, a, b, headers):
@@ -264,7 +267,7 @@ class CSVReader(object):
 
 
 if __name__ == '__main__':
-    csv_obj = CSVReader('data/admit_to_discharge_avg.csv')
+    csv_obj = CSVReader('data/baseline/avg_wait_time_edreg_to_edout.csv')
 
     private_patients = csv_obj.grab_rows_via_attribute('Private')
     medicare_patients = csv_obj.grab_rows_via_attribute('Medicare')
@@ -296,6 +299,10 @@ if __name__ == '__main__':
         private_patients_avg_wait_time, medicare_patients_avg_wait_time
     )
     print('Cohen-d test reveals: {}'.format(cohen_d))
+
+    print()
+    print('Size of private cohort: {}'.format(len(private_patients_avg_wait_time)))
+    print('Size of Medicare cohort: {}'.format(len(medicare_patients_avg_wait_time)))
 
     '''
     first_level_class = csv_obj.create_first_level_classifier()
