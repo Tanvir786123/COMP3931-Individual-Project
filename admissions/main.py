@@ -301,8 +301,12 @@ if __name__ == '__main__':
     print('Cohen-d test reveals: {}'.format(cohen_d))
 
     print()
-    print('Size of private cohort: {}'.format(len(private_patients_avg_wait_time)))
-    print('Size of Medicare cohort: {}'.format(len(medicare_patients_avg_wait_time)))
+    print('Size of private cohort: {}'.format(
+        len(private_patients_avg_wait_time))
+    )
+    print('Size of Medicare cohort: {}'.format(
+        len(medicare_patients_avg_wait_time))
+    )
 
     '''
     first_level_class = csv_obj.create_first_level_classifier()
