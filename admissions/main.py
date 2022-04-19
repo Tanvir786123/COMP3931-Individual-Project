@@ -222,7 +222,7 @@ class CSVReader(object):
             index += 1
         return vector
 
-    def levine(self, a, b, describe=True):
+    def levene(self, a, b, describe=True):
         test, p_val = levene(a, b)
         if describe:
             # Print decision.
@@ -276,21 +276,26 @@ if __name__ == '__main__':
         medicare_patients, 3
     )
 
-    t_stat, p_val = csv_obj.levine(
+    t_stat, p_val = csv_obj.levene(
         private_patients_avg_wait_time, medicare_patients_avg_wait_time
     )
-    print(t_stat, p_val)
+    print(
+        'Levene test reveals: T-stat: {} and P-val: {}'.format(t_stat, p_val)
+    )
     print()
+
     t_stat, p_val = csv_obj.welch_t(
         private_patients_avg_wait_time, medicare_patients_avg_wait_time
     )
-    print(t_stat, p_val)
+    print(
+        'Welch t-test reveals: T-stat: {} and P-val: {}'.format(t_stat, p_val)
+    )
     print()
+
     cohen_d = csv_obj.cohen_d(
         private_patients_avg_wait_time, medicare_patients_avg_wait_time
     )
-    print()
-    print(cohen_d)
+    print('Cohen-d test reveals: {}'.format(cohen_d))
 
     '''
     first_level_class = csv_obj.create_first_level_classifier()
