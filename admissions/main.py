@@ -196,7 +196,7 @@ class CSVReader(object):
             try:
                 vector.append(float(row[index]))
             except Exception as e:
-                print(e)
+                pass
         return np.asarray(vector)
 
     def combine(self, a, b, headers):
