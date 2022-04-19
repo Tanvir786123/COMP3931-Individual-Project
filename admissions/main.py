@@ -254,20 +254,19 @@ class CSVReader(object):
         pooled_sd = np.sqrt(pv_num/pv_den)
         d = (a.mean()-b.mean())/pooled_sd
         if describe:
-            print("Cohens'd:", d)
-        if d < 0.20:
-            print('Effect Size: Very Small')
-        elif d < 0.50:
-            print('Effect Size: Small')
-        elif d < 0.80:
-            print('Effect Size: Medium')
-        else:
-            print('Effect Size: Large')
+            if d < 0.20:
+                print('Effect Size: Very Small')
+            elif d < 0.50:
+                print('Effect Size: Small')
+            elif d < 0.80:
+                print('Effect Size: Medium')
+            else:
+                print('Effect Size: Large')
         return d
 
 
 if __name__ == '__main__':
-    csv_obj = CSVReader('data/baseline/avg_wait_time_edreg_to_edout.csv')
+    csv_obj = CSVReader('data/baseline/avg_wait_time_admit_to_discharge.csv')
 
     private_patients = csv_obj.grab_rows_via_attribute('Private')
     medicare_patients = csv_obj.grab_rows_via_attribute('Medicare')
