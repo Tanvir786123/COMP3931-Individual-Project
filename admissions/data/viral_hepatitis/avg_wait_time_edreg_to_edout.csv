@@ -59,7 +59,7 @@ subject_id,insurance,first_admit_age,average_wait_time_admit_to_discharge
 2554,Private,52,233
 2570,Private,56,
 2580,Medicare,46,303
-2589,Medicare,66,410.66666666666669
+2589,Medicare,66,410.66666666666663
 2647,Private,47,
 2674,Medicare,70,
 2953,Medicare,41,312
@@ -146,7 +146,7 @@ subject_id,insurance,first_admit_age,average_wait_time_admit_to_discharge
 7167,Private,41,
 7171,Private,51,288
 7192,Medicare,78,511.5
-7275,Medicare,54,428
+7275,Medicare,54,427.99999999999994
 7281,Private,47,
 7291,Private,49,
 7340,Private,46,261
@@ -182,7 +182,7 @@ subject_id,insurance,first_admit_age,average_wait_time_admit_to_discharge
 9110,Medicare,74,
 9224,Medicare,69,574
 9249,Medicare,70,205
-9278,Private,47,588.66666666666674
+9278,Private,47,588.66666666666663
 9313,Medicare,55,184
 9356,Medicare,50,476
 9364,Medicare,53,280
@@ -261,7 +261,7 @@ subject_id,insurance,first_admit_age,average_wait_time_admit_to_discharge
 13089,Medicare,70,
 13180,Medicare,51,586
 13185,Medicare,48,
-13373,Medicare,50,285.66666666666669
+13373,Medicare,50,285.66666666666663
 13438,Private,47,
 13439,Private,50,
 13442,Private,39,
@@ -290,6 +290,7 @@ subject_id,insurance,first_admit_age,average_wait_time_admit_to_discharge
 14672,Private,56,
 14703,Medicare,57,1702
 14716,Private,60,417
+14768,Private,66,185
 14818,Medicare,72,154
 14837,Medicare,66,1559.5
 14864,Private,42,
@@ -328,8 +329,8 @@ subject_id,insurance,first_admit_age,average_wait_time_admit_to_discharge
 16757,Private,51,
 16832,Private,45,534
 16840,Medicare,73,
-16847,Private,41,733
-16976,Medicare,61,350.37499999999994
+16847,Private,41,568
+16976,Medicare,61,350.375
 16979,Private,59,
 17054,Medicare,73,220
 17129,Medicare,53,449
@@ -405,7 +406,7 @@ subject_id,insurance,first_admit_age,average_wait_time_admit_to_discharge
 20854,Private,36,
 20920,Private,23,
 20960,Private,52,737
-20969,Medicare,73,480.33333333333331
+20969,Medicare,73,480.33333333333337
 21043,Medicare,46,1032
 21123,Medicare,37,1282
 21153,Medicare,52,
@@ -489,6 +490,7 @@ subject_id,insurance,first_admit_age,average_wait_time_admit_to_discharge
 26197,Private,49,
 26200,Medicare,74,254.8
 26239,Medicare,52,
+26288,Private,52,
 26447,Medicare,53,483
 26474,Medicare,75,291
 26510,Private,35,
@@ -699,6 +701,7 @@ subject_id,insurance,first_admit_age,average_wait_time_admit_to_discharge
 49853,Private,49,623
 49925,Medicare,50,261
 50039,Medicare,58,
+50067,Private,55,
 50197,Medicare,64,694
 50221,Medicare,50,171
 50289,Private,58,149
@@ -1106,6 +1109,7 @@ subject_id,insurance,first_admit_age,average_wait_time_admit_to_discharge
 98685,Private,55,
 98761,Medicare,51,342
 98899,Medicare,50,
+98944,Private,47,
 98994,Medicare,46,
 99115,Private,51,240
 99122,Medicare,70,
