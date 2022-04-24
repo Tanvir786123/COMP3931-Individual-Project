@@ -266,7 +266,7 @@ class CSVReader(object):
 
 
 if __name__ == '__main__':
-    csv_obj = CSVReader('data/chronic_liver_disease_and_cirrhosis/avg_wait_time_admit_to_discharge.csv')
+    csv_obj = CSVReader('data/liver_abscess_and_sequela_of_chronic_liver_disease/avg_wait_time_edreg_to_edout.csv')
 
     private_patients = csv_obj.grab_rows_via_attribute('Private')
     medicare_patients = csv_obj.grab_rows_via_attribute('Medicare')
