@@ -312,6 +312,9 @@ if __name__ == '__main__':
     )
 
     '''
+    csv_obj = CSVReader(
+        'data/diagnosis_icd.csv'
+    )
     first_level_class = csv_obj.create_first_level_classifier()
     second_level_class = csv_obj.create_second_level_classifier()
     third_level_class = csv_obj.create_third_level_classifier()
