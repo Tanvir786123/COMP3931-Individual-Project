@@ -267,6 +267,8 @@ class CSVReader(object):
 
 if __name__ == '__main__':
     csv_obj = CSVReader('data/poisoning_by_psychotropic_agents/avg_wait_time_edreg_to_edout.csv')
+    #avg_wait_time_admit_to_discharge
+    #avg_wait_time_edreg_to_edout
 
     private_patients = csv_obj.grab_rows_via_attribute('Private')
     medicare_patients = csv_obj.grab_rows_via_attribute('Medicare')
