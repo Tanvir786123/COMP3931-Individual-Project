@@ -150,7 +150,7 @@ class CSVReader(object):
             stack.pop()
             second_lvl_sentence = stack.pop()
             if second_lvl_sentence not in second_lvl_codes:
-                print('fuck')
+                print('Unusual error found please check this code immediately')
             else:
                 second_lvl_pk = second_lvl_codes[second_lvl_sentence][0]
                 third_lvl_codes[k] = [third_lvl_pk, second_lvl_pk]
@@ -167,7 +167,7 @@ class CSVReader(object):
             stack = self.generate_classifications(search(icd9_code), stack)
             first_lvl_sentence = stack.pop()
             if first_lvl_sentence not in first_lvl_codes:
-                print('fuck')
+                print('Unusual error found please check this code immediately')
             else:
                 first_lvl_pk = first_lvl_codes[first_lvl_sentence]
                 second_lvl_codes[k] = [second_lvl_pk, first_lvl_pk]
@@ -238,7 +238,7 @@ class CSVReader(object):
 
     '''
     A method to combine two one-dimensional vectors into a two dimensional
-    vector where each column consists of the original vector paramters
+    vector where each column consists of the original vector parameters
     that can differ in size with respect to each other.
     '''
     def combine(self, a, b, headers):
