@@ -269,8 +269,6 @@ if __name__ == '__main__':
     csv_obj = CSVReader(
         'data/alcohol_dependence_syndrome/avg_wait_time_admit_to_discharge.csv'
     )
-    # avg_wait_time_admit_to_discharge
-    # avg_wait_time_edreg_to_edout
 
     private_patients = csv_obj.grab_rows_via_attribute('Private')
     medicare_patients = csv_obj.grab_rows_via_attribute('Medicare')
