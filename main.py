@@ -14,6 +14,10 @@ class CSVReader(object):
     def __del__(self):
         self.__file.close()
 
+    '''
+    A recursive method to generate the ICD9 hierarchy given a code and
+    store the hierarchy into a stack.
+    '''
     def generate_classifications(self, object, stack):
         if object.parent is None:
             stack.append(object)
@@ -22,6 +26,9 @@ class CSVReader(object):
         self.generate_classifications(object.parent, stack)
         return stack
 
+    '''
+    A method to create the first level of ICD9 codes.
+    '''
     def create_first_level_classifier(self):
         ICD9_CODE = 3
         next(self.__reader)
@@ -47,6 +54,9 @@ class CSVReader(object):
         self.__file.seek(0)
         return first_lvl_codes
 
+    '''
+    A method to create the second level of ICD9 codes.
+    '''
     def create_second_level_classifier(self):
         ICD9_CODE = 3
         next(self.__reader)
@@ -73,6 +83,9 @@ class CSVReader(object):
         self.__file.seek(0)
         return second_lvl_codes
 
+    '''
+    A method to create the third level of ICD9 codes.
+    '''
     def create_third_level_classifier(self):
         ICD9_CODE = 3
         next(self.__reader)
@@ -99,6 +112,10 @@ class CSVReader(object):
         self.__file.seek(0)
         return third_lvl_codes
 
+    '''
+    A method to create create the new diagnosis_icd table linked to
+    the third level ICD9 table.
+    '''
     def generate_diagnosis_icd(self, third_lvl_codes):
         HEADERS = ['subject_id', 'hadm_id', 'seq_num', 'icd9_code',
                    'third_level_code']
@@ -121,6 +138,9 @@ class CSVReader(object):
                 stack.clear()
         return list
 
+    '''
+    A method to connect the third ICD9 level to the second ICD9 level.
+    '''
     def connect_third_lvl_to_second(self, second_lvl_codes, third_lvl_codes):
         stack = deque()
         for k, v in third_lvl_codes.items():
@@ -136,6 +156,9 @@ class CSVReader(object):
                 third_lvl_codes[k] = [third_lvl_pk, second_lvl_pk]
             stack.clear()
 
+    '''
+    A method to connect the second ICD9 level to the first ICD9 level.
+    '''
     def connect_second_lvl_to_first(self, first_lvl_codes, second_lvl_codes):
         stack = deque()
         for k, v in second_lvl_codes.items():
@@ -150,6 +173,9 @@ class CSVReader(object):
                 second_lvl_codes[k] = [second_lvl_pk, first_lvl_pk]
             stack.clear()
 
+    '''
+    A method to save a list of items in a CSV format.
+    '''
     def save_to_path(self, path, list):
         file = open(path, 'w')
         counter = 0
@@ -164,6 +190,9 @@ class CSVReader(object):
             counter = 0
         file.close()
 
+    '''
+    A method to save a dictionary of items in a CSV format.
+    '''
     def save_dict_to_file(self, path, dict, headers):
         file = open(path, 'w')
         count = 0
@@ -182,6 +211,10 @@ class CSVReader(object):
                 file.write(str(v) + ',' + str(k) + '\n')
         file.close()
 
+    '''
+    A method to return a vector of rows if the rows contain a specified
+    attribute.
+    '''
     def grab_rows_via_attribute(self, attribute):
         vector = list()
         for row in self.__reader:
@@ -190,6 +223,10 @@ class CSVReader(object):
         self.__file.seek(0)
         return np.asarray(vector)
 
+    '''
+    A method to return a vector of rows if the rows contain a specified
+    attribute that can be represented as a float for a given index.
+    '''
     def get_array_slice(self, a, index):
         vector = list()
         for row in a:
@@ -199,6 +236,11 @@ class CSVReader(object):
                 pass
         return np.asarray(vector)
 
+    '''
+    A method to combine two one-dimensional vectors into a two dimensional
+    vector where each column consists of the original vector paramters
+    that can differ in size with respect to each other.
+    '''
     def combine(self, a, b, headers):
         a = a.tolist()
         b = b.tolist()
@@ -225,6 +267,9 @@ class CSVReader(object):
             index += 1
         return vector
 
+    '''
+    A method to perform the Levene test and print the values if told to.
+    '''
     def levene(self, a, b, describe=True):
         test, p_val = levene(a, b)
         if describe:
@@ -235,6 +280,9 @@ class CSVReader(object):
                 print('Decision: Fail to reject the null hypothesis')
         return test, p_val
 
+    '''
+    A method to perform the Welch t-test and print the values if told to.
+    '''
     def welch_t(self, a, b, equal_var=False, describe=True):
         # Perform Welch's t-test
         test, p_val = ttest_ind(a, b, equal_var=equal_var)
@@ -246,6 +294,9 @@ class CSVReader(object):
                 print('Decision: Fail to reject the null hypothesis')
         return test, p_val
 
+    '''
+    A method to perform the Cohen d test and print the values if told to.
+    '''
     def cohen_d(self, a, b, describe=True):
         a_n, b_n = len(a), len(b)
         # Calculate pooled standard deviation.
@@ -266,8 +317,13 @@ class CSVReader(object):
 
 
 if __name__ == '__main__':
+    '''
+    This block of code reads the statistics from an example diagnosis and
+    prints out the results.
+    '''
     csv_obj = CSVReader(
-        'statistics/alcohol_dependence_syndrome/avg_wait_time_admit_to_discharge.csv'
+        'statistics/'
+        + 'alcohol_dependence_syndrome/avg_wait_time_admit_to_discharge.csv'
     )
 
     private_patients = csv_obj.grab_rows_via_attribute('Private')
@@ -309,6 +365,11 @@ if __name__ == '__main__':
         len(medicare_patients_avg_wait_time))
     )
 
+    '''
+    This block of code reads generates the three-level ICD9 hierarchy system
+    and links them together with the diagnosis_icd table in a relational
+    database format.
+    '''
     csv_obj = CSVReader(
         'old_tables_from_big_query/diagnosis_icd.csv'
     )
