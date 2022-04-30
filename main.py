@@ -267,7 +267,7 @@ class CSVReader(object):
 
 if __name__ == '__main__':
     csv_obj = CSVReader(
-        'data/alcohol_dependence_syndrome/avg_wait_time_admit_to_discharge.csv'
+        'statistics/alcohol_dependence_syndrome/avg_wait_time_admit_to_discharge.csv'
     )
 
     private_patients = csv_obj.grab_rows_via_attribute('Private')
@@ -309,9 +309,8 @@ if __name__ == '__main__':
         len(medicare_patients_avg_wait_time))
     )
 
-    '''
     csv_obj = CSVReader(
-        'data/diagnosis_icd.csv'
+        'old_tables_from_big_query/diagnosis_icd.csv'
     )
     first_level_class = csv_obj.create_first_level_classifier()
     second_level_class = csv_obj.create_second_level_classifier()
@@ -320,17 +319,16 @@ if __name__ == '__main__':
     csv_obj.connect_third_lvl_to_second(second_level_class, third_level_class)
 
     diagnosis_icd = csv_obj.generate_diagnosis_icd(third_level_class)
-    csv_obj.save_to_path('celonis/diagnosis_icd.csv', diagnosis_icd)
+    csv_obj.save_to_path('new_tables_output/diagnosis_icd.csv', diagnosis_icd)
 
-    csv_obj.save_dict_to_file('celonis/first_level_icd9_codes.csv',
+    csv_obj.save_dict_to_file('new_tables_output/first_level_icd9_codes.csv',
                               first_level_class,
                               ['primary_key', 'first_level_class'])
-    csv_obj.save_dict_to_file('celonis/second_level_icd9_codes.csv',
+    csv_obj.save_dict_to_file('new_tables_output/second_level_icd9_codes.csv',
                               second_level_class,
                               ['primary_key',
                                'second_level_class', 'fk_first_level_class'])
-    csv_obj.save_dict_to_file('celonis/third_level_icd9_codes.csv',
+    csv_obj.save_dict_to_file('new_tables_output/third_level_icd9_codes.csv',
                               third_level_class,
                               ['primary_key', 'third_level_class',
                                'fk_second_level_class'])
-    '''
