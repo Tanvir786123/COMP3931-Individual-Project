@@ -225,7 +225,7 @@ class CSVReader(object):
 
     '''
     A method to return a vector of rows if the rows contain a specified
-    attribute that can be represented as a float for a given index.
+    attribute that can be represented as a float at a specified index per row.
     '''
     def get_array_slice(self, a, index):
         vector = list()
